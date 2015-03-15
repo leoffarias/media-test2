@@ -49,7 +49,7 @@ var app = {
 
     playAudio: function() {
       var media = new Media(
-        'http://sh2.upx.com.br:8012/listen.pls',
+        'http://sh2.upx.com.br:8012/;stream.mp3',
         function() {
           alert( "Media Success" );
         },
