@@ -49,7 +49,7 @@ var app = {
 
     playAudio: function() {
       var media = new Media(
-        'http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3',
+        'http://sh2.upx.com.br:8012/listen.pls',
         function() {
           alert( "Media Success" );
         },
