@@ -63,6 +63,10 @@ margin-left:-47px;
 margin-top:-51px;*/
 }
 
+button img {
+    width:80%;
+}
+
 .logo {
     width:75%;
 }
