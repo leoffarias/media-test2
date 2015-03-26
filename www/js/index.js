@@ -37,15 +37,13 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("backbutton", function () {
-        if(media) { 
+        document.addEventListener("backbutton", function () { 
          navigator.notification.confirm(
              'Tem certeza que deseja sair?', 
              onConfirmQuit, 
              'QUIT TITLE', 
              'Sim,Não'  
          );
-       }
      }, true);
     },
     // deviceready Event Handler
