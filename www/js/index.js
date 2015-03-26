@@ -58,11 +58,14 @@ var app = {
         function() {
           alert( "Media Failure, reason: " + err );
         },
-
-        function() {
-          alert( "Media Failure, reason: " + err );
-        }, onStatus
-        );
+        function(status) {
+   
+                    if (my_media.MEDIA_STOPPED === 4) {
+                           media.play();
+                    } else {
+                        media.stop();
+                    }
+        });
 
           function onStatus(status) {
         if( status==Media.MEDIA_STOPPED ) {
