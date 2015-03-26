@@ -65,17 +65,7 @@ var app = {
                     } else {
                         media.stop();
                     }
-        });
-
-          function onStatus(status) {
-        if( status==Media.MEDIA_STOPPED ) {
-            media.play();
-        }
-        else {
-            media.stop();
-        }
-    }
-          
+        });        
 }
 
       
