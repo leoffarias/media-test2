@@ -55,11 +55,11 @@ var app = {
           media = new Media(
         'http://sh2.upx.com.br:8012/;stream.mp3',
         function() {
-          alert( "Media Success" );
+          
         },
         
         function() {
-          alert( "Media Failure, reason: " + err );
+          
         },
         function(status) {
           if (status == 1) {
