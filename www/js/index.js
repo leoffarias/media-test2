@@ -64,8 +64,10 @@ var app = {
         function(status) {
           if (status == 1) {
                       document.getElementById('play-btn').style.display = 'none';
+                      document.getElementById('spinner').style.display = 'block';
 
           } else if (status == 2) {
+            document.getElementById('spinner').style.display = 'none';
             document.getElementById('pause-btn').style.display = 'block';
           } else if (status == 4) {
           document.getElementById('pause-btn').style.display = 'none';
