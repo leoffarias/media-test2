@@ -50,8 +50,7 @@ var app = {
 
     playAudio: function() {
 
-        document.getElementById('pause-btn').style.display = 'block';
-          document.getElementById('play-btn').style.display = 'none';
+        
 
           media = new Media(
         'http://sh2.upx.com.br:8012/;stream.mp3',
@@ -63,7 +62,15 @@ var app = {
           alert( "Media Failure, reason: " + err );
         },
         function(status) {
-          alert(status);
+          if (status == 1) {
+                      document.getElementById('play-btn').style.display = 'none';
+
+          } else if (status == 2) {
+            document.getElementById('pause-btn').style.display = 'block';
+          } else if (status == 4) {
+          document.getElementById('pause-btn').style.display = 'none';
+          document.getElementById('play-btn').style.display = 'block';
+          }
         }
         );
           media.play();
@@ -74,8 +81,6 @@ var app = {
 
      stopAudio: function() {
         if(media) {
-          document.getElementById('pause-btn').style.display = 'none';
-          document.getElementById('play-btn').style.display = 'block';
           media.stop();
       }
 
