@@ -20,16 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        var media = null;
-
-    function onConfirmQuit(button){
-        if(button == "1"){
-        if(media) {
-          media.stop();
-      }
-            navigator.app.exitApp(); 
-        }
-    }   
+        var media = null;  
     },
     // Bind Event Listeners
     //
@@ -45,6 +36,14 @@ var app = {
              'Sim,Não'  
          );
      }, true);
+    function onConfirmQuit(button){
+        if(button == "1"){
+        if(media) {
+          media.stop();
+      }
+            navigator.app.exitApp(); 
+        }
+    } 
     },
     // deviceready Event Handler
     //
