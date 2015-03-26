@@ -19,7 +19,6 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
     },
     // Bind Event Listeners
     //
@@ -49,7 +48,7 @@ var app = {
 
     playAudio: function() {
 
-         var media = new Media(
+          var media = new Media(
         'http://sh2.upx.com.br:8012/;stream.mp3',
         function() {
           alert( "Media Success" );
@@ -57,16 +56,9 @@ var app = {
         
         function() {
           alert( "Media Failure, reason: " + err );
-        },
-        function(status) {
-   
-                    if (media.MEDIA_STOPPED === 4) {
-                           media.play();
-                    } else {
-                        media.stop();
-                    }
-        });        
-}
+        });
+          media.play();
+
 
       
     }
