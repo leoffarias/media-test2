@@ -28,22 +28,6 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("backbutton", function () { 
-         navigator.notification.confirm(
-             'Tem certeza que deseja sair?', 
-             onConfirmQuit, 
-             'QUIT TITLE', 
-             'Sim,Não'  
-         );
-     }, true);
-    function onConfirmQuit(button){
-        if(button == "1"){
-        if(media) {
-          media.stop();
-      }
-            navigator.app.exitApp(); 
-        }
-    } 
     },
     // deviceready Event Handler
     //
@@ -51,6 +35,24 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        document.addEventListener("backbutton", function () { 
+         navigator.notification.confirm(
+             'Tem certeza que deseja sair?', 
+             onConfirmQuit, 
+             'Fechar o Aplicativo', 
+             'Sim,Não'  
+         );
+     }, false);
+            function onConfirmQuit(button){
+        if(button == "1"){
+        if(media) {
+          media.stop();
+      }
+            navigator.app.exitApp(); 
+        } else {
+          return;
+        }
+    } 
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
