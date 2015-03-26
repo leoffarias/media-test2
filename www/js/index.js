@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        var media = null;
     },
     // Bind Event Listeners
     //
@@ -48,7 +49,11 @@ var app = {
     },
 
     playAudio: function() {
-      var media = new Media(
+        if (media) {
+            media.stop();
+            media = null;
+        } else {
+          media = new Media(
         'http://sh2.upx.com.br:8012/;stream.mp3',
         function() {
           alert( "Media Success" );
@@ -57,7 +62,9 @@ var app = {
         function() {
           alert( "Media Failure, reason: " + err );
         });
+          media.play();
+}
 
-      media.play();
+      
     }
 };
