@@ -60,7 +60,7 @@ var app = {
         },
         function(status) {
    
-                    if (my_media.MEDIA_STOPPED === 4) {
+                    if (media.MEDIA_STOPPED === 4) {
                            media.play();
                     } else {
                         media.stop();
