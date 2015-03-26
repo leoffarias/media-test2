@@ -49,10 +49,7 @@ var app = {
     },
 
     playAudio: function() {
-        if (media) {
-            media.stop();
-            media = null;
-        } else {
+
           media = new Media(
         'http://sh2.upx.com.br:8012/;stream.mp3',
         function() {
@@ -63,7 +60,7 @@ var app = {
           alert( "Media Failure, reason: " + err );
         });
           media.play();
-}
+
 
       
     }
