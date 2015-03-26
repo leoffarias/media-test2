@@ -21,6 +21,15 @@ var app = {
     initialize: function() {
         this.bindEvents();
         var media = null;
+
+    function onConfirmQuit(button){
+        if(button == "1"){
+        if(media) {
+          media.stop();
+      }
+            navigator.app.exitApp(); 
+        }
+    }   
     },
     // Bind Event Listeners
     //
@@ -28,6 +37,16 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("backbutton", function () {
+        if(media) { 
+         navigator.notification.confirm(
+             'Tem certeza que deseja sair?', 
+             onConfirmQuit, 
+             'QUIT TITLE', 
+             'Sim,Não'  
+         );
+       }
+     }, true);
     },
     // deviceready Event Handler
     //
@@ -87,5 +106,5 @@ var app = {
       }
 
       
-    }   
+    }
 };
