@@ -19,6 +19,8 @@
 var app = {
     // Application Constructor
     initialize: function() {
+        this.bindEvents();
+        var media = null;
     },
     // Bind Event Listeners
     //
@@ -48,7 +50,10 @@ var app = {
 
     playAudio: function() {
 
-          var media = new Media(
+        document.getElementById('pause-btn').style.display = 'block';
+          document.getElementById('play-btn').style.display = 'none';
+
+          media = new Media(
         'http://sh2.upx.com.br:8012/;stream.mp3',
         function() {
           alert( "Media Success" );
@@ -61,5 +66,15 @@ var app = {
 
 
       
-    }
+    },
+
+     stopAudio: function() {
+        if(media) {
+          document.getElementById('pause-btn').style.display = 'none';
+          document.getElementById('play-btn').style.display = 'block';
+          media.stop();
+      }
+
+      
+    }   
 };

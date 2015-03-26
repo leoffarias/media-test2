@@ -76,6 +76,10 @@ button img {
     margin-top:3%;
 }
 
+#pause-btn {
+    display:none;
+}
+
 h1 {
     font-size:24px;
     font-weight:normal;
