@@ -61,7 +61,11 @@ var app = {
         
         function() {
           alert( "Media Failure, reason: " + err );
-        });
+        },
+        function(status) {
+          alert(status);
+        }
+        );
           media.play();
 
 
