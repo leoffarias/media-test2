@@ -6,7 +6,7 @@
         id        = "com.leandro.phonegap"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>CBN Recife</name>
 
     <description>
         Hello World sample application that responds to the deviceready event.
